@@ -1,0 +1,46 @@
+.header {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.scrollBtn {
+    left: 50%; 
+    right: 50%; 
+    bottom: 10px;
+    z-index: 1035;
+    transform: translate(-50%, -50%);
+}
+
+.scrollBtn a:hover span {
+    color: var(--bs-primary)!important;
+    border-color: var(--bs-primary)!important;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+.carouselImg {
+    filter: brightness(80%);
+}
+
+
+@media(max-width: 767px) {
+    .header {
+        height: 70vh
+    }
+
+    .scrollBtn {
+        bottom: calc(10px + 30vh);
+    }
+}
+
+@media(max-width: 424px) {
+    .header {
+        height: 50vh
+    }
+
+    .scrollBtn {
+       display: none;
+    }
+}

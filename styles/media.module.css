@@ -1,0 +1,27 @@
+.card {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card:hover {
+    border: var(--bs-primary) solid 2px;
+    /* shadow:  */
+}
+
+.card img {
+    transition: transform 1.2s; /* Animation */
+}
+
+.card:hover img{
+    transform: scale(1.5)
+}
+
+.cardImgWrapper {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.cardImgWrapper img {
+    vertical-align: middle
+}
