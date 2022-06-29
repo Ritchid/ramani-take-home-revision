@@ -24,8 +24,7 @@ const Medium = ({mediumData}: IMediumProps): JSX.Element =>{
     const {movieGenres: MOVIE_GENRE, seriesGenres: SERIES_GENRE} = useContext(GenreContext);
     
     return (
-
-        <Col xs={12} sm={6} md={4} className="mb-3">
+        <Col xs={12} md={6} lg={3} className="mb-3">
             <Link href={`/${encodeURIComponent(mediumData.id)}`} >
                 <Card className={styles.card}>
                     <div className={clsx("bg-primary", styles.cardImgWrapper)}>

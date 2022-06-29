@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3345",
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",

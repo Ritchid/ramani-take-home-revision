@@ -49,7 +49,9 @@ export async function getAllMovies(path: string): Promise<any> {
             params: {
                 language: APP_CONFIGS.language
             }
-        });        
+        });   
+        console.log(allMovies.data);
+             
         return allMovies.data;
     } catch (error) {
         return error;

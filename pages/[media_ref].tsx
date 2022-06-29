@@ -57,34 +57,53 @@ function MediaPage(): JSX.Element {
                 </Row>
 
                 <Row>
-                  <Col xs={12} sm={6} md={3} className="d-flex align-items-center">
-                    <h5 className="text-muted">Released Data: </h5>
-                    <h4 className="px-2">{mediumData?.publishedOn?.toDateString()}</h4>
-                  </Col>
-                  <Col xs={12} sm={6} md={3} className="d-flex align-items-center">
-                    <h5 className="text-muted">Media Type: </h5>
-                    <h4 className="px-2">{startCase(mediumData?.mediaType)}</h4>
-                  </Col>
-                  <Col xs={12} sm={6} md={3} className="d-flex align-items-center">
-                    <h5 className="text-muted">Popularity: </h5>
-                    <h4 className="px-2">{mediumData?.popularity}</h4>
-                  </Col>
-                  <Col xs={12} sm={6} md={3} className="d-flex align-items-center">
-                    
-                  </Col>
-                  <Col xs={12} sm={12} md={6}>
-                    <h5 className="text-muted">Genre Tags: </h5>
-                    <div>
-                      {mediumData?.relatedGenres.map((genre) =>(
-                        <Badge className="mx-2 my-1" style={{fontSize: 16}}>
-                          {mediumData?.mediaType == MEDIA_TYPES.MOVIE? (
-                            startCase(MOVIE_GENRE.find((value) => value.id == genre)?.name)
-                          ): (
-                            startCase(SERIES_GENRE.find((value) => value.id == genre)?.name)
-                          )}
-                        </Badge>
-                      ))}
+                  <Col sm={0} md={4}>
+                    <div className="card shadow-sm mb-3" style={{minHeight: "50vh"}}>
+                      <Image
+                        src={`${TMDB_IMG_BASEURL}${mediumData?.posterImg}`}
+                        alt={mediumData?.title}
+                        loading="lazy"
+                        layout="fill"
+                      />
                     </div>
+                  </Col>
+                  <Col sm={12} md={8}>
+                    <Row>
+                      <Col xs={12} sm={6} md={12} lg={6} className="d-flex align-items-center">
+                        <h5 className="text-muted">Released Data: </h5>
+                        <h4 className="px-2">{mediumData?.publishedOn? mediumData?.publishedOn?.toDateString() : null}</h4>
+                      </Col>
+
+                      <Col xs={12} sm={6} className="d-flex align-items-center">
+                        <h5 className="text-muted">Media Type: </h5>
+                        <h4 className="px-2">{startCase(mediumData?.mediaType)}</h4>
+                      </Col>
+                      
+                      <Col xs={12} sm={6} className="d-flex align-items-center">
+                        <h5 className="text-muted">Popularity: </h5>
+                        <h4 className="px-2">{mediumData?.popularity}</h4>
+                      </Col>
+
+                      <Col xs={12} sm={6} className="d-flex align-items-center">
+                        <h5 className="text-muted">Language: </h5>
+                        <h4 className="px-2">{startCase(mediumData?.language)}</h4>
+                      </Col>
+
+                      <Col xs={12}>
+                        <h5 className="text-muted">Genre Tags: </h5>
+                        <div>
+                          {mediumData?.relatedGenres.map((genre) =>(
+                            <Badge className="mx-2 my-1" style={{fontSize: 16}}>
+                              {mediumData?.mediaType == MEDIA_TYPES.MOVIE? (
+                                startCase(MOVIE_GENRE.find((value) => value.id == genre)?.name)
+                              ): (
+                                startCase(SERIES_GENRE.find((value) => value.id == genre)?.name)
+                              )}
+                            </Badge>
+                          ))}
+                        </div>
+                      </Col>
+                    </Row>
                   </Col>
                 </Row>
               </Container>

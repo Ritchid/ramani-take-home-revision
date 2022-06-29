@@ -9,4 +9,5 @@
     images: {
         domains: ['image.tmdb.org'],
     },
+    optimizeFonts: true,
 }

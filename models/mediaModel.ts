@@ -13,6 +13,7 @@ interface IMedaiResponseTypes {
     overview: string;
     popularity: number;
     poster_path?: string;
+    original_language?: string;
 }
 
 export interface IMedia {
@@ -25,6 +26,7 @@ export interface IMedia {
     overview: string;
     popularity: number;
     posterImg?: string;
+    language?: string;
 }
 
 class Media {
@@ -37,6 +39,7 @@ class Media {
     overview: string;
     popularity: number;
     posterImg?: string;
+    language?: string;
 
     constructor(data: IMedaiResponseTypes) {
         this.mediaType = data.media_type=="tv"? MEDIA_TYPES.SERIES : MEDIA_TYPES.MOVIE;
@@ -48,6 +51,7 @@ class Media {
         this.overview = data.overview;
         this.popularity = data.popularity;
         this.posterImg = data.poster_path;
+        this.language = data?.original_language;
     }
 }
 
