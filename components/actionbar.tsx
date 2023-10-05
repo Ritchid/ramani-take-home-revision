@@ -10,7 +10,7 @@ import { GENRE_TYPES, MEDIA_TYPES } from "../resources/enums";
 import GenreContext from "../contexts/genreContext";
 import { IGenre } from "../models/genreModel";
 import useModal from "../hooks/components/modalHook";
-import ModalSeach from "./searchContent";
+import SearchModal from "./searchContent";
 import MediaContext from "../contexts/mediaContext";
 
 
@@ -81,7 +81,7 @@ function ActionBar({mediaNumber=0, onFilter}: IActionBarProps): JSX.Element {
             fullscreen: true,
             scrollable: true,
             title: "Search",
-            content: (<ModalSeach />)
+            content: (<SearchModal />)
         })
     }
 

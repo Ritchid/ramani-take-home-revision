@@ -33,6 +33,7 @@ const Medium = ({mediumData}: IMediumProps): JSX.Element =>{
                             alt={mediumData.title}
                             loading="lazy"
                             layout="fill"
+                            className={styles.image}
                         />
                     </div>
                     <Card.ImgOverlay>

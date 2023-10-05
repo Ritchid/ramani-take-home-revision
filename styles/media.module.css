@@ -27,3 +27,7 @@
 .cardImgWrapper img {
     vertical-align: middle
 }
+
+.image {
+    object-fit: contain;
+}
